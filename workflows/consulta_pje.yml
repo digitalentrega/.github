@@ -1,0 +1,32 @@
+name: Rodar consulta PJe diariamente
+
+on:
+  schedule:
+    - cron: '0 11 * * *'  # Executa às 08:00 BRT (horário de Brasília)
+  workflow_dispatch:       # Também permite executar manualmente
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clonar repositório
+        uses: actions/checkout@v3
+
+      - name: Configurar Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Instalar dependências
+        run: |
+          pip install requests pandas openpyxl
+
+      - name: Executar script
+        run: python consulta_pje.py
+
+      - name: Salvar arquivo gerado como artefato
+        uses: actions/upload-artifact@v3
+        with:
+          name: resultado-diario
+          path: consultas_pje/
