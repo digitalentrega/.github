@@ -17,7 +17,7 @@ logging.basicConfig(
 )
 
 # Diretório para salvar os arquivos Excel
-DIRETORIO_SAIDA = "consultas_pje"
+DIRETORIO_SAIDA = "consulta_pje"
 os.makedirs(DIRETORIO_SAIDA, exist_ok=True)
 
 # Configurações da consulta
