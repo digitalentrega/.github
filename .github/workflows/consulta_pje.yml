@@ -29,4 +29,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: resultado-diario
-          path: consultas_pje/
+          path: consulta_pje/
