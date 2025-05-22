@@ -46,9 +46,11 @@ def consultar_api(data_inicio, data_fim):
     
     headers = {
         "accept": "application/json",
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)",
+        "Referer": "https://pje.jus.br/",
+        "Origin": "https://pje.jus.br",
     }
-    
+
     try:
         logging.info(f"Consultando API para o período de {data_inicio} a {data_fim}")
         response = requests.get(url, params=params, headers=headers)
