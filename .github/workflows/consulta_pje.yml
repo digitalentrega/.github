@@ -26,7 +26,7 @@ jobs:
         run: python consulta_pje.py
 
       - name: Salvar arquivo gerado como artefato
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: resultado-diario
           path: consultas_pje/
